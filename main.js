@@ -1,4 +1,4 @@
-/* Taller 3 JavaScript
+Taller 3 JavaScript
 1. Construir un objeto literal "campus" que gestione
 la info(PROPIEDADES) de Campus, trainers, campers, niveles,
 tecnologías, teams y roadMap
@@ -44,3 +44,49 @@ Teams.addEventListener("submit", (e)=>{
     console.log(campus);
     Teams.reset();
 })
+function place() {
+    var  lugar = document.getElementById('option')
+if (lugar && lugar.value == "Bucaramanga"){
+    document.getElementById("Dirección").style="display:block"
+    document.getElementById("Telefono").style="display:none";
+}else if (lugar && lugar.value == "Medellin"){
+    document.getElementById("Dirección").style="display:none"
+    document.getElementById("Telefono").style="display:block";
+}
+}
+function myFunc() {
+    var resul = document.getElementById('optionteam')
+if (resul && resul.value == "Team_1") {
+    document.getElementById("t1").style="display:block";
+}else if (resul && resul.value == "Team_2"){
+    document.getElementById("t2").style="display:block";
+    document.getElementById("t1").style="display:none";
+}else if (resul && resul.value == "Team_C4"){
+    document.getElementById("tc4").style="display:block";
+    document.getElementById("t2").style="display:none";
+    document.getElementById("t1").style="display:none";
+}else if (resul && resul.value == "Team_S4"){
+    document.getElementById("ts4").style="display:block";
+    document.getElementById("tc4").style="display:none";
+    document.getElementById("t2").style="display:none";
+    document.getElementById("t1").style="display:none";
+}else if (resul && resul.value == "Team_E3"){
+    document.getElementById("totros").style="display:block";
+    document.getElementById("ts4").style="display:none";
+    document.getElementById("tc4").style="display:none";
+    document.getElementById("t2").style="display:none";
+    document.getElementById("t1").style="display:none";
+}else if (resul && resul.value == "Team_W3"){
+    document.getElementById("totros").style="display:block";
+    document.getElementById("ts4").style="display:none";
+    document.getElementById("tc4").style="display:none";
+    document.getElementById("t2").style="display:none";
+    document.getElementById("t1").style="display:none";
+}else if (resul && resul.value == "Team_W4"){
+    document.getElementById("totros").style="display:block";
+    document.getElementById("ts4").style="display:none";
+    document.getElementById("tc4").style="display:none";
+    document.getElementById("t2").style="display:none";
+    document.getElementById("t1").style="display:none";
+}
+}
