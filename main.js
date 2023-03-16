@@ -21,17 +21,17 @@ Admisedes.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target))
     console.log(data);
-    listaSedes();
+    listaSedes("[name='sedes']", campus);
     let sede = data.sedes;
     delete data.sedes;
     Admisedes.reset();
 
 });
 
-let listaSedes = ()=>{
-    let opciones = document.querySelector("[name='sedes']");
+let listaSedes = (p1,p2)=>{
+    let opciones = document.querySelector(p1);
     opciones.innerHTML = null;
-    for (let [val, id] of Object.entries(campus)) {
-        opciones.insertAdjacentHTML("beforeend",`<option value="${val}">${val}</option>`);
+    for (let [val, id] of Object.entries(p2)) {
+        opciones.insertAdjacentHTML("beforeend",`+ <option value="${val}">${val}</option>`);
     }
 };
