@@ -14,34 +14,51 @@
           <label>Ingresa la Sede:</label>
           <input type="text" name="sedes" placeholder="Sede Campus"><br><br>
           <label>Ingresa el Encargado:</label>
-          <input type="text" name="sEncargado" placeholder="Encargado Campus"><br><br>
+          <input type="text" name="Encargado" placeholder="Encargado Campus"><br><br>
           <label>Ingresa el Telefono:</label>
-          <input type="text" name="sTelefono" placeholder="Telefono Campus"><br><br>
-          <input type="submit" value="Guardar">
+          <input type="text" name="Telefono" placeholder="Telefono Campus"><br><br>
+          <input type="submit" value="Guardar"><br><br>
         </fieldset>
       </form>
       <form id="Teams">
         <fieldset>
           <legend>Teams Campus</legend><br>
+          <select name="sedes"></select>
           <label>Ingresa el Team:</label>
           <input type="text" name="tTeams" placeholder="Nombre del team"><br><br>
           <label for="tDias">Selcciona el día:</label><br><br>
-            <input type="radio" name="tLunes">
+            <input type="radio" name="dias">
             <label for="tLunes">Lunes</label>
-            <input type="radio" name="tMartes">
+            <input type="radio" name="dias">
             <label for="tMartes">Martes</label>
-            <input type="radio" name="tMiercoles">
+            <input type="radio" name="dias">
             <label for="tMiercoles">Miercoles</label>
-            <input type="radio" name="tJueves">
+            <input type="radio" name="dias">
             <label for="tJueves">Jueves</label>
-            <input type="radio" name="tViernes">
+            <input type="radio" name="dias">
             <label for="tViernes">Viernes</label><br><br>
           <label>Ingresa la Hora:</label><br><br>
           <label for="itime">Inicio:</label>
           <input type="time" name="itime">&nbsp;&nbsp;
           <label for="itime">Final:</label>
           <input type="time" name="itime"><br><br>
-          <input type="submit" value="Guardar">
+          <label for="optionstec">Elige el Tipo de Tecnología:</label>&nbsp;&nbsp;
+          <select id="optionstec" name="optionstec">
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+          </select><br><br>
+          <div>
+            <label for="optionsleng">Selecciona los Lenguajes de Programación:</label><br><br>
+            <input type="checkbox" id="leng1" name="interest" value="python" />
+            <label for="python">Python</label>&nbsp;&nbsp;
+            <input type="checkbox" id="leng2" name="interest" value="java" />
+            <label for="java">Java</label>&nbsp;&nbsp;
+            <input type="checkbox" id="leng3" name="interest" value="javascript" />
+            <label for="javascript">Javascript</label>&nbsp;&nbsp;
+            <input type="checkbox" id="leng" name="interest" value="html" />
+            <label for="html">Html</label><br><br>
+          </div>
+          <input type="submit" value="Guardar"><br><br>
         </fieldset>
       </form>
       <form id="Trainers">

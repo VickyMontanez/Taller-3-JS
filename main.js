@@ -13,4 +13,25 @@ barrio y medio de transporte
 es electiva u obligatoria
 1.5. De la roadmap , Nro de créditos, año, Nro de asignaturas */
 
+let Admisedes = document.querySelector("#Admisedes");
+let Teams = document.querySelector("#Teams");
+let campus= {};
 
+Admisedes.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target))
+    console.log(data);
+    listaSedes();
+    let sede = data.sedes;
+    delete data.sedes;
+    Admisedes.reset();
+
+});
+
+let listaSedes = ()=>{
+    let opciones = document.querySelector("[name='sedes']");
+    opciones.innerHTML = null;
+    for (let [val, id] of Object.entries(campus)) {
+        opciones.insertAdjacentHTML("beforeend",`<option value="${val}">${val}</option>`);
+    }
+};
