@@ -12,16 +12,14 @@
     <form id="Admisedes">
         <fieldset>
           <legend>Contacto Sedes Campus</legend><br>
-          <div id="option" name="option" onchange ="place()"></div>
-            <label>Ingresa la Sede:</label>
-            <input type="text" name="sedes" placeholder="Sede Campus"><br><br>
-            <label>Ingresa el Encargado:</label>
-            <input type="text" name="Encargado" placeholder="Encargado Campus"><br><br>
-            <label id="Telefono">Ingresa el Telefono:</label>
-            <input type="text" name="Telefono" id="Telefono" placeholder="Telefono Campus"><br><br>
-            <label id="Dirección" >Ingresa la dirección:</label>
-            <input type="text" name="Dirección" id="Dirección" placeholder="Dirección Campus"><br><br>
-          </div>
+          <label>Ingresa la Sede:</label>
+          <input type="text" name="sedes" placeholder="Sede Campus"><br><br>
+          <label>Ingresa el Encargado:</label>
+          <input type="text" name="Encargado" placeholder="Encargado Campus"><br><br>
+          <label id="Telefono">Ingresa el Telefono:</label>
+          <input type="text" name="Telefono" id="Telefono" placeholder="Telefono Campus"><br><br>
+          <label id="Dirección" >Ingresa la dirección:</label>
+          <input type="text" name="Dirección" id="Dirección" placeholder="Dirección Campus"><br><br>
         <input type="submit" value="Guardar"><br><br>
         </fieldset>
     </form>
@@ -32,21 +30,23 @@
         <label>Ingresa el Nombre del Team:</label>
         <input type="text" name="Teams" placeholder="Nombre del team"><br><br>
         <label for="optionteam">Elige el Team:</label>&nbsp;&nbsp;
-        <select id="optionteam" name="optionsteam" onchange ="myFunc()">
-          <option>Selecciona:</option>
-          <option value="Team_1">Team 1</option>
-          <option value="Team_2">Team 2</option>
-          <option value="Team_C4">Team C4</option>
-          <option value="Team_S4">Team S4</option>
-          <option value="Team_E3">Team E3</option>
-          <option value="Team_W3">Team W3</option>
-          <option value="Team_W4">Team W4</option>
-        </select><br><br>
-          <label for="tDias">Selcciona el día:</label><br><br>
-          <input type="radio" name="dias" value="Lunes">
+          <select id="optionteam" name="optionsteam" onchange ="myFunc()">
+            <option value="none">Selecciona:</option>
+            <option value="Team_1">Team 1</option>
+            <option value="Team_2">Team 2</option>
+            <option value="Team_C4">Team C4</option>
+            <option value="Team_S4">Team S4</option>
+            <option value="Team_E3">Team E3</option>
+            <option value="Team_W3">Team W3</option>
+            <option value="Team_W4">Team W4</option>
+          </select><br><br>
+        <div id="optionday" name="optionday" onchange ="myFuncDay()">
+          <label>Selcciona el día:</label><br><br>
+          <input type="radio" name="dias" value="Lunes_Jueves">
           <label for="tLunes">Lunes - Jueves</label>
           <input type="radio" name="dias" value="Viernes">
           <label for="tViernes">Viernes</label><br><br>
+        </div>
           <img src="./img/t1.jpg" id="t1" class="thorario">
           <img src="./img/t2.jpg" id="t2" class="thorario">
           <img src="./img/tv1.jpg" id="tv1" class="thorario">
@@ -55,13 +55,15 @@
           <img src="./img/tc4.jpg" id="tc4" class="thorario">
           <img src="./img/totros.jpg" id="totros" class="thorario">
         <label for="optionstec">Elige el Tipo de Tecnología:</label>&nbsp;&nbsp;
-        <select id="optionstec" name="optionstec">
-          <option>Selecciona:</option>
-          <option value="Frontend">Frontend</option>
-          <option value="Backend">Backend</option>
-          <option value="Fullstack">Fullstack</option>
-        </select><br><br>
-        <div>
+          <select id="optionstec" name="optionstec">
+            <option>Selecciona:</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Fullstack">Fullstack</option>
+            <option value="Tecnica">Tecnica</option>
+            <option value="Backend">Carrera</option>
+          </select><br><br>
+          <div>
           <label for="optionsleng">Selecciona los Lenguajes de Programación:</label><br><br>
           <input type="checkbox" id="leng1" name="interest" value="python" />
           <label for="python">Python</label>&nbsp;&nbsp;
@@ -81,9 +83,7 @@
         <input type="text" name="tNombre" placeholder="Nombre del Trainer"><br><br>
         <input type="text" name="tTelefono" placeholder="Telefono del trainer"><br><br>
         <input type="text" name="tEmail" placeholder="Email del Trainer"><br><br>
-        <input type="text" name="tTeam" placeholder="Team del Trainer"><br><br>
         <input type="text" name="tHorario" placeholder="Horario del Trainer"><br><br>
-        <input type="text" name="tSalon" placeholder="Salon del Trainer"><br><br>
         <input type="submit" value="Guardar">
       </fieldset>
     </form>
