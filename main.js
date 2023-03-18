@@ -15,19 +15,21 @@ es electiva u obligatoria
 
 let Admisedes = document.querySelector("#Admisedes");
 let Teams = document.querySelector("#Teams");
-let campus= {};
+let Trainers = document.querySelector("#Trainers");
+let Campers = document.querySelector("#Campers");
+let campus= [];
 
 Admisedes.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target))
     console.log(data);
-    campus[`${data.sedes}`] = {Camper: [], Trainers: []};
+    campus[`${data.sedes}`] = {Teams:[],Camper: [], Trainers: []};
     listaSedes();
     Admisedes.reset();
 });
 
 let listaSedes = ()=>{
-    let opciones = document.querySelector("[name='sede']");
+    let opciones = document.querySelector("[name ='sede']");
     opciones.innerHTML = null;
     for (let [val, id] of Object.entries(campus)) {
         opciones.insertAdjacentHTML("beforeend",` <option value="${val}">${val}</option>`);
@@ -40,63 +42,95 @@ Teams.addEventListener("submit", (e)=>{
     console.log(data);
     let sede = data.sede;
     delete data.sede;
-    campus[`${sede}`]["Camper"].unshift(data);
-    console.log(campus);
+    campus[`${sede}`]=[Teams].unshift(data);
     Teams.reset();
 });
 
+Trainers.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target));
+    console.log(data);
+    let sede = data.sede;
+    delete data.sede;
+    campus[`${data.sede}`]=[Trainers].unshift(data);
+    Trainers.reset();
+});
+
+Campers.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target));
+    console.log(data);
+    let sede = data.sede;
+    delete data.sede;
+    campus[`${data.sede}`]=[Campers].unshift(data);
+    Campers.reset();
+});
+
 function myFunc() {
-    var resul = document.getElementById('optionteam')
+    var resul = document.getElementById('Team-Camper');
 if (resul && resul.value == "none") {
     document.getElementById("totros").style="display:none";
     document.getElementById("ts4").style="display:none";
     document.getElementById("tc4").style="display:none";
     document.getElementById("t2").style="display:none";
+    document.getElementById("tv2").style="display:none";
     document.getElementById("t1").style="display:none";
+    document.getElementById("tv1").style="display:none";
 }else if (resul && resul.value == "Team_1") {
     document.getElementById("t1").style="display:block";
+    document.getElementById("tv1").style="display:block";
     document.getElementById("totros").style="display:none";
+    document.getElementById("ts4").style="display:none";
+    document.getElementById("tc4").style="display:none";
+    document.getElementById("t2").style="display:none";
+    document.getElementById("tv2").style="display:none";
 }else if (resul && resul.value == "Team_2"){
     document.getElementById("t2").style="display:block";
+    document.getElementById("tv2").style="display:block";
     document.getElementById("t1").style="display:none";
+    document.getElementById("tv1").style="display:none";
     document.getElementById("totros").style="display:none";
+    document.getElementById("ts4").style="display:none";
+    document.getElementById("tc4").style="display:none";
 }else if (resul && resul.value == "Team_C4"){
     document.getElementById("tc4").style="display:block";
     document.getElementById("t2").style="display:none";
+    document.getElementById("tv2").style="display:none";
     document.getElementById("t1").style="display:none";
+    document.getElementById("tv1").style="display:none";
     document.getElementById("totros").style="display:none";
+    document.getElementById("ts4").style="display:none";
 }else if (resul && resul.value == "Team_S4"){
     document.getElementById("ts4").style="display:block";
     document.getElementById("tc4").style="display:none";
     document.getElementById("t2").style="display:none";
+    document.getElementById("tv2").style="display:none";
     document.getElementById("t1").style="display:none";
+    document.getElementById("tv1").style="display:none";
     document.getElementById("totros").style="display:none";
 }else if (resul && resul.value == "Team_E3"){
     document.getElementById("totros").style="display:block";
     document.getElementById("ts4").style="display:none";
     document.getElementById("tc4").style="display:none";
     document.getElementById("t2").style="display:none";
+    document.getElementById("tv2").style="display:none";
     document.getElementById("t1").style="display:none";
+    document.getElementById("tv1").style="display:none";
 }else if (resul && resul.value == "Team_W3"){
     document.getElementById("totros").style="display:block";
     document.getElementById("ts4").style="display:none";
     document.getElementById("tc4").style="display:none";
     document.getElementById("t2").style="display:none";
+    document.getElementById("tv2").style="display:none";
     document.getElementById("t1").style="display:none";
+    document.getElementById("tv1").style="display:none";
 }else if (resul && resul.value == "Team_W4"){
     document.getElementById("totros").style="display:block";
     document.getElementById("ts4").style="display:none";
     document.getElementById("tc4").style="display:none";
     document.getElementById("t2").style="display:none";
+    document.getElementById("tv2").style="display:none";
     document.getElementById("t1").style="display:none";
+    document.getElementById("tv1").style="display:none";
 }
 };
-
-function myFuncDay(myFunc){
-    var day = document.getElementsByName("dias")
-if (day && day.value == "Viernes") {
-    if (myFunc  () == resul && resul.value == "Team_1"){}
-    document.getElementById("t1").style="display:none";
-    document.getElementById("tv1").style="display: block";
-}
-}
