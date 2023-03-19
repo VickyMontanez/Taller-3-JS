@@ -1,10 +1,38 @@
+@font-face {
+  font-family: Keepon;
+  src: url(./fonts/KeeponTruckin.ttf);
+}
+
 table {
     border: #b2b2b2 1px solid;
-  }
-  td, th {
+}
+td, th {
     border: black 1px solid;
-  }
+}
   
 .thorario{
     display: none;
+}
+
+nav{
+  background-color:#1e0828;
+}
+
+section{
+  background-image:url(./img/image-background-inicio.jpg);
+  font-family: Keepon;
+  font-size: 200px;
+}
+
+legend{
+  font-family: Keepon;
+  font-family: 80px;
+}
+
+footer{
+  background-color:#1e0828;
+  align-items: center;
+  color: rgb(131, 120, 120);
+  font-family: Keepon;
+  height: 50px;
 }
